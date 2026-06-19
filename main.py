@@ -17,7 +17,6 @@ def resource_path(relative_path):
         base_path = os.path.abspath(".")
     return os.path.join(base_path, relative_path)
 
-""" searcher dll variables """
 scanner_dll = ctypes.CDLL('./nomadexp.dll')
 
 check_callbacl = ctypes.CFUNCTYPE(None , ctypes.c_wchar_p , ctypes.c_wchar_p)
