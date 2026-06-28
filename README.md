@@ -1,4 +1,6 @@
-# Nomad Search
+# NomadEXP — Lightweight AI Privacy-First File Manager
+> **A lightweight, privacy-first file manager and local AI-powered desktop search utility for Windows.**
+
 
 Nomad is a lightweight, privacy-first, and highly optimized Windows utility designed to find your files and applications instantly. By bypassing slow operating system APIs and scanning the file system at a low level, Nomad delivers immediate search results with a near-zero system footprint.
 
@@ -12,6 +14,13 @@ Nomad is a lightweight, privacy-first, and highly optimized Windows utility desi
 * **Local AI Semantic Search:** Integrated quantized ONNX model (`all-MiniLM-L12-v2` sitting at 114MB) running via Microsoft's ONNX Runtime. Allows searching files by meaning rather than exact name matching.
 * **Native PySide6 UI:** A custom, dark-themed, frameless user interface built entirely with Qt widgets. It avoids the heavy memory and CPU bloat of Chromium-based frame engines.
 * **Extreme Resource Efficiency:** Runs fully locally and offline, typically idling at around 30MB to 50MB of RAM.
+
+## 🔒 Privacy-First Local AI Search
+Unlike cloud-dependent file explorers, Nomad ensures complete data privacy:
+* **100% Offline Execution:** Runs a quantized `all-MiniLM-L12-v2` ONNX model entirely on your local CPU/GPU.
+* **No Telemetry:** Your file names, paths, and search queries never leave your local machine.
+* **Zero Network Footprint:** Operates behind a strict local sandbox with no external API calls.
+
 
 ---
 
