@@ -1,4 +1,6 @@
-# Nomad Search
+# NomadEXP — Lightweight AI Privacy-First File Manager
+
+> **A lightweight, privacy-first file manager and local AI-powered desktop search utility for Windows.**
 
 Nomad is a lightweight, privacy-first, and highly optimized Windows utility designed to find your files and applications instantly. By bypassing slow operating system APIs and scanning the file system at a low level, Nomad delivers immediate search results with a near-zero system footprint.
 
@@ -6,7 +8,15 @@ Nomad is a lightweight, privacy-first, and highly optimized Windows utility desi
 
 ---
 
-## Key Features
+## 📸 Preview & UI
+
+*If you like this lightweight AI file explorer, please drop a ⭐ to support the project!*
+
+<img width="846" height="492" alt="NomadSearchScreenshot" src="https://github.com/user-attachments/assets/85f2caca-785f-4d95-85f2-d202c0b53fc2" />
+
+---
+
+## 🛠️ Key Features
 
 * **Direct NTFS MFT Scanner:** Uses a highly optimized dynamic library (DLL) written in C (`main.c`) that parses the Master File Table (MFT) directly. It achieves near-zero search latency across millions of files.
 * **Local AI Semantic Search:** Integrated quantized ONNX model (`all-MiniLM-L12-v2` sitting at 114MB) running via Microsoft's ONNX Runtime. Allows searching files by meaning rather than exact name matching.
@@ -15,15 +25,34 @@ Nomad is a lightweight, privacy-first, and highly optimized Windows utility desi
 
 ---
 
-## Getting Started
+## 🔒 Privacy-First Local AI Search
+
+Unlike cloud-dependent file explorers, Nomad ensures complete data privacy:
+* **100% Offline Execution:** Runs a quantized `all-MiniLM-L12-v2` ONNX model entirely on your local CPU/GPU.
+* **No Telemetry:** Your file names, paths, and search queries never leave your local machine.
+* **Zero Network Footprint:** Operates behind a strict local sandbox with no external API calls.
+
+---
+
+## ⚙️ How It Works
+
+1. **Low-Level Scan:** On startup, the C-compiled DLL (`nomadexp.dll`) reads the raw NTFS Master File Table sectors. This bypasses the standard Windows API to build an instantaneous in-memory tree of your storage.
+2. **Local Vector Embeddings:** Text and file metadata are vectorized completely offline using the lightweight ONNX model.
+3. **Semantic Querying:** When you type a query like *"tax document"*, the local AI matches the semantic meaning against your files, retrieving documents even if they don't contain the literal word "tax".
+
+---
+
+## 🚀 Getting Started
 
 ### Running from Source
 If you wish to run, audit, modify, and build the source code yourself, follow these steps.
 
 #### Prerequisites
+* Windows 10 / 11
 * A Windows C compiler (e.g., GCC via MinGW)
 * Python 3.10+
-* Required Python libraries:
+
+Install the required dependencies:
 ```bash
 pip install PySide6 rapidfuzz numpy onnxruntime tokenizers keyboard
 ```
@@ -41,13 +70,19 @@ pyside6-uic NomadUI.ui -o quick_search_ui.py
 ```
 
 #### 3. Run the Application
-Make sure you run it with Administrator privileges since accessing raw disk sectors (MFT) requires elevated permissions.
+Make sure you run it with **Administrator privileges** since accessing raw disk sectors (MFT) requires elevated permissions.
 ```bash
 python main.py
 ```
 
 #### 4. Package to an Executable
-To bundle all dependencies, the C-DLL, and the AI model:
+To bundle all dependencies, the C-DLL, and the AI model into a standalone binary:
 ```bash
 python -m PyInstaller --noconsole --onedir --add-data "nomadexp.dll;." --add-data "extensions.json;." --add-data "AI_Model;AI_Model" main.py
 ```
+
+---
+
+## 🤝 Contributing
+
+Contributions are highly welcome! Whether you are optimizing the C-based MFT parser, improving the ONNX model embedding pipeline, or polishing the PySide6 UI stylesheet, feel free to open an issue or submit a pull request.
