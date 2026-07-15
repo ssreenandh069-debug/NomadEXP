@@ -1,0 +1,19 @@
+<RCC>
+  <qresource prefix="/Icons">
+    <file>Assets/Icons/Cards_Icon.svg</file>
+    <file>Assets/Icons/Compress_Icon.svg</file>
+    <file>Assets/Icons/Copy_Icon.svg</file>
+    <file>Assets/Icons/Create_New_File_Icon.svg</file>
+    <file>Assets/Icons/Create_New_Folder_Icon.svg</file>
+    <file>Assets/Icons/Cut_Icon.svg</file>
+    <file>Assets/Icons/Delete_Icon.svg</file>
+    <file>Assets/Icons/Details_Icon.svg</file>
+    <file>Assets/Icons/Duplicate_Icon.svg</file>
+    <file>Assets/Icons/List_Icon.svg</file>
+    <file>Assets/Icons/Redo_Icon.svg</file>
+    <file>Assets/Icons/Rename_Icon.svg</file>
+    <file>Assets/Icons/Settings_Icon.svg</file>
+    <file>Assets/Icons/Terminal_Icon.svg</file>
+    <file>Assets/Icons/Undo_Icon.svg</file>
+  </qresource>
+</RCC>
