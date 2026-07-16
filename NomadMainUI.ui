@@ -105,8 +105,6 @@ QToolButton:hover, #toolbar QPushButton:hover {
 
 #sidebar {
     background-color: #1A1A1A; 
-    min-width: 200px;
-    max-width: 260px;
 }
 
 #sidebar QPushButton {
@@ -215,6 +213,9 @@ QSplitter::handle {
        </item>
        <item>
         <widget class="QPushButton" name="undo">
+         <property name="toolTip">
+          <string>Undo</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -232,6 +233,9 @@ QSplitter::handle {
        </item>
        <item>
         <widget class="QPushButton" name="redo">
+         <property name="toolTip">
+          <string>Redo</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -249,6 +253,9 @@ QSplitter::handle {
        </item>
        <item>
         <widget class="QPushButton" name="terminal">
+         <property name="toolTip">
+          <string>Terminal</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -282,6 +289,9 @@ QSplitter::handle {
        </item>
        <item>
         <widget class="QPushButton" name="ai_center">
+         <property name="toolTip">
+          <string>Under Development!</string>
+         </property>
          <property name="text">
           <string>Ai center</string>
          </property>
@@ -302,6 +312,9 @@ QSplitter::handle {
        </item>
        <item>
         <widget class="QPushButton" name="settings">
+         <property name="toolTip">
+          <string>Settings</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -344,6 +357,9 @@ QSplitter::handle {
        </property>
        <item>
         <widget class="QPushButton" name="new_folder">
+         <property name="toolTip">
+          <string>New Folder</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -361,6 +377,9 @@ QSplitter::handle {
        </item>
        <item>
         <widget class="QPushButton" name="new_file">
+         <property name="toolTip">
+          <string>New File</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -388,6 +407,9 @@ QSplitter::handle {
        </item>
        <item>
         <widget class="QPushButton" name="cut">
+         <property name="toolTip">
+          <string>Cut</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -405,6 +427,9 @@ QSplitter::handle {
        </item>
        <item>
         <widget class="QPushButton" name="copy">
+         <property name="toolTip">
+          <string>Copy</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -422,6 +447,9 @@ QSplitter::handle {
        </item>
        <item>
         <widget class="QPushButton" name="duplicate">
+         <property name="toolTip">
+          <string>Duplicate</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -449,6 +477,9 @@ QSplitter::handle {
        </item>
        <item>
         <widget class="QPushButton" name="rename">
+         <property name="toolTip">
+          <string>Rename</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -466,6 +497,9 @@ QSplitter::handle {
        </item>
        <item>
         <widget class="QPushButton" name="compress">
+         <property name="toolTip">
+          <string>Compress</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -483,6 +517,9 @@ QSplitter::handle {
        </item>
        <item>
         <widget class="QPushButton" name="Delete">
+         <property name="toolTip">
+          <string>Delete</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -500,6 +537,9 @@ QSplitter::handle {
        </item>
        <item>
         <widget class="QPushButton" name="layout">
+         <property name="toolTip">
+          <string>Layout</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -517,6 +557,9 @@ QSplitter::handle {
        </item>
        <item>
         <widget class="QPushButton" name="details">
+         <property name="toolTip">
+          <string>Properties</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -563,7 +606,22 @@ QSplitter::handle {
       <property name="handleWidth">
        <number>1</number>
       </property>
+      <property name="childrenCollapsible">
+       <bool>false</bool>
+      </property>
       <widget class="QWidget" name="sidebar" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>50</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <layout class="QVBoxLayout" name="verticalLayout_7">
         <property name="spacing">
          <number>0</number>
@@ -610,6 +668,12 @@ QSplitter::handle {
        </layout>
       </widget>
       <widget class="QScrollArea" name="main_scroll_area">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="widgetResizable">
         <bool>true</bool>
        </property>
@@ -618,7 +682,7 @@ QSplitter::handle {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>513</width>
+          <width>521</width>
           <height>527</height>
          </rect>
         </property>
